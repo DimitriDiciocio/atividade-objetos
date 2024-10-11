@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+</head>
+<body>
+    <script>
+        const pessoa = {
+            nome : 'Dimitri Diciocio',
+            idade : 12,
+            email : 'Dimitri.diciocio@uol.br.com.querosercontratadopfpf'
+        }
+        console.log(pessoa)
+        const livro = {
+            titulo : 'Harre Poter',
+            autor : 'kim kardashian',
+            publicacao : 'editora filmicca'
+        }
+        console.log(livro.autor)
+        pessoa.endereco = 'rua string bairro linha cidade de deus'
+        console.log(pessoa)
+        pessoa.cumprimentar = function() {console.log('Olá, meu nome é ' + this.nome)}
+        console.log(pessoa)
+        function iterando(objeto) {
+            for (k in objeto) {
+                console.log(k + " : " + objeto[k])
+            }
+        }
+        iterando(pessoa)
+        const carro = {
+            marca : 'Chevrolet',
+            modelo : 'Celta',
+            proprietario : {
+                nome : 'Lucas Amarante',
+                idade : 16
+            }
+        }
+        console.log(carro.proprietario.idade)
+        function objetificar(objeto, chave, valor) {
+            objeto[chave] = valor
+        }
+        console.log(objetificar(pessoa, 'idade', 1))
+        function verificar(objeto, chave) {
+            if (objeto[chave]) {
+                console.log('true')
+            } else {
+                console.log('false')
+            }
+        }
+        verificar(pessoa, idade)
+        function arrayDeObjetos(array) {
+            let velho = 0
+            let nomeDoVelho = ''
+            for (obj of array) {
+                if (obj['idade'] > velho) {
+                    velho = obj['idade']
+                    nomeDoVelho = obj['nome']
+                }
+            }
+            console.log(nomeDoVelho + ' com ' + velho + ' anos')
+        }
+        lista = [
+            pessoa1 = {
+                nome : 'Dimitri',
+                idade : 12
+            },
+            pessoa2 = {
+                nome : 'Lucas',
+                idade : 16
+            }
+        ]
+        arrayDeObjetos(lista)
+        const sapato = {
+            tamanho : 42,
+            estilo : '12 MOLA',
+            marca : 'ABIDAS',
+            cadarco : {
+                tecido : 'Nilon',
+                qualidade : 'Novo',
+                amarrado : false,
+                amarrar() {
+                    this.amarrado = true
+                }
+            },
+            sola : 'algodão',
+            qualidade : 'novo',
+            chutar() {alert('Estou Chutando'); this.qualidade = 'usado'},
+            andar() {alert("Estou andando")},
+            sapatear() {alert("Estou sapateando")}
+        }
+        console.log(sapato)
+    </script>
+</body>
+</html>
